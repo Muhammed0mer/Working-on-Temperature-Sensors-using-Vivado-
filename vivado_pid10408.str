@@ -1,0 +1,106 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 10408
+License: Customer
+
+Current time: 	Thu Jan 19 20:47:07 PKT 2023
+Time zone: 	Pakistan Time (Asia/Karachi)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 0 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	Y:/Vivado_installed/Vivado/2018.2/tps/win64/jre
+Java executable location: 	Y:/Vivado_installed/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Nadeem
+User home directory: C:/Users/Nadeem
+User working directory: G:/vivado_workspaces/cep
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: Y:/Vivado_installed/Vivado
+HDI_APPROOT: Y:/Vivado_installed/Vivado/2018.2
+RDI_DATADIR: Y:/Vivado_installed/Vivado/2018.2/data
+RDI_BINDIR: Y:/Vivado_installed/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Nadeem/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Nadeem/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Nadeem/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	Y:/Vivado_installed/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	G:/vivado_workspaces/cep/vivado.log
+Vivado journal file location: 	G:/vivado_workspaces/cep/vivado.jou
+Engine tmp dir: 	G:/vivado_workspaces/cep/.Xil/Vivado-10408-DESKTOP-JVKRNTH
+
+Xilinx Environment Variables
+----------------------------
+XILINX: Y:/Vivado_installed/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: Y:/Vivado_installed/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: Y:/Vivado_installed/Vivado/2018.2
+XILINX_SDK: Y:/Vivado_installed/SDK/2018.2
+XILINX_VIVADO: Y:/Vivado_installed/Vivado/2018.2
+XILINX_VIVADO_HLS: Y:/Vivado_installed/Vivado/2018.2
+
+
+GUI allocated memory:	150 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 499 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 46 MB (+46241kb) [00:00:18]
+// [Engine Memory]: 499 MB (+371255kb) [00:00:18]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: G:\vivado_workspaces\cep\cep.xpr. Version: Vivado v2018.2 
+// [GUI Memory]: 55 MB (+6974kb) [00:00:20]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project G:/vivado_workspaces/cep/cep.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 509 MB. GUI used memory: 36 MB. Current time: 1/19/23 8:47:10 PM PKT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project G:/vivado_workspaces/cep/cep.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [Engine Memory]: 549 MB (+26565kb) [00:00:29]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Y:/Vivado_installed/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 587 MB (+11628kb) [00:00:37]
+// [GUI Memory]: 63 MB (+5349kb) [00:00:39]
+// [Engine Memory]: 625 MB (+8304kb) [00:00:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 625 MB. GUI used memory: 38 MB. Current time: 1/19/23 8:47:29 PM PKT
+// Project name: cep; location: G:/vivado_workspaces/cep; part: xc7a100tcsg324-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 795.785 ; gain = 99.262 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (segment_display.v) elapsed time: 0.2s
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, segment_display (segment_display.v)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, segment_display (segment_display.v)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, segment_display (segment_display.v)]", 1, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+typeControlKey(null, null, 'z');
+// [GUI Memory]: 68 MB (+1793kb) [00:02:35]
