@@ -89,3 +89,39 @@ endmodule
  end
  endmodule
  
+ module circuit_shifter(input shift_in, input shift_clk, output shift_out);
+ 
+ module get_temp(SDA, SCL, CLK, temp);
+    inout SDA;
+    input SCL;
+    input CLK;
+    output reg[7:0] temp;
+    reg [7:0] count;
+    reg [2:0] mode;
+    const init_and_address = 9'b010010000;
+reg [8:0] shift_reg;
+ assign shift_out = shift_reg[8];
+ assign shift_in = shift_out
+    always @(posedge shift_clk) begin
+        shift_reg <= shift_reg << 1;
+        shift_reg[0] <= shift_in;
+    end
+
+    initial begin
+        assign SDA = 1;
+    end
+
+    always @(posedge CLK) begin
+        if(count==8'b11111111)begin
+        count <= 0;
+        end
+        else begin
+        count <= count + 1;
+        end
+    end
+
+    
+
+
+
+    
