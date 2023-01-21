@@ -89,36 +89,73 @@ endmodule
  end
  endmodule
  
- module circuit_shifter(input shift_in, input shift_clk, output shift_out);
- 
- module get_temp(SDA, SCL, CLK, temp);
-    inout SDA;
-    input SCL;
+module PWM_generator(CLK,DUTY_CYCLE, PWM_OUT);
+input CLK;
+output PWM_OUT;
+
+reg[3:0] PWM_counter;
+output reg[3:0] DUTY_CYCLE=5;
+
+always @(posedge CLK) begin
+    PWM_counter<=PWM_counter+1;
+    if(PWM_counter>=9)
+    PWM_counter<=0;
+end
+assign PWM_OUT = PWM_counter < DUTY_CYCLE? 1:0;
+endmodule
+
+
+
+
+ module rgb_to_pwm(RGBval, CLK, PWM_R, PWM_G, PWM_B);
+    input [23:0] RGBval;
     input CLK;
-    output reg[7:0] temp;
-    reg [7:0] count;
-    reg [2:0] mode;
-    const init_and_address = 9'b010010000;
-reg [8:0] shift_reg;
- assign shift_out = shift_reg[8];
- assign shift_in = shift_out
-    always @(posedge shift_clk) begin
-        shift_reg <= shift_reg << 1;
-        shift_reg[0] <= shift_in;
-    end
+    output PWM_R;
+    output PWM_G;
+    output PWM_B;
 
-    initial begin
-        assign SDA = 1;
-    end
 
-    always @(posedge CLK) begin
-        if(count==8'b11111111)begin
-        count <= 0;
-        end
-        else begin
-        count <= count + 1;
-        end
-    end
+    PWM_generator PWM_Rgen (CLK,RGBval[23:16]>>1, PWM_R);
+    PWM_generator PWM_Ggen (CLK,RGBval[15:8]>>1, PWM_G);
+    PWM_generator PWM_Bgen (CLK, RGBval[7:0]>>1, PWM_B);
+
+endmodule
+
+
+    
+    
+
+ 
+//  module get_temp(SDA, SCL, CLK, temp);
+//     inout SDA;
+//     input SCL;
+//     input CLK;
+//     output reg[7:0] temp;
+//     reg [7:0] count;
+//     reg [2:0] mode;
+//     const init_and_address = 9'b010010000;
+// reg [8:0] shift_reg;
+//  assign shift_out = shift_reg[8];
+//  assign shift_in = shift_out
+//     always @(posedge shift_clk) begin
+//         shift_reg <= shift_reg << 1;
+//         shift_reg[0] <= shift_in;
+//     end
+
+//     initial begin
+//         assign SDA = 1;
+//     end
+
+//     always @(posedge CLK) begin
+//         if(count==8'b11111111)begin
+//         count <= 0;
+//         end
+//         else begin
+//         count <= count + 1;
+//         end
+//     end
+
+
 
     
 
