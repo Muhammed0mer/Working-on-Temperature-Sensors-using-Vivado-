@@ -51,14 +51,21 @@ input CLK;
 input [7:0] temp;
 output reg [23:0] RGBval;
 
-reg [7:0] temp_reg;
+
 
 always @(posedge CLK) begin
-temp_reg <= temp;
+if(temp < 8'd32) begin
+RGBval <= {8'd66,8'd245,8'd66+(temp<<2)};
+end
+else if(temp > 8'd32 && temp < 8'd38) begin
+RGBval <= {8'd255,8'd255-(temp<<2),8'd66};
+end
+else begin
+RGBval <= {8'd255,8'd0,8'd0}; 
+end
 end
 
-assign RGBval = {temp_reg[7:4], temp_reg[7:4], temp_reg[7:4], temp_reg[3:0], temp_reg[3:0], temp_reg[3:0]};
-
+endmodule
 
 
 module segment_display(SW, CLK, SSEG_CA,SSEG_AN, LED);
