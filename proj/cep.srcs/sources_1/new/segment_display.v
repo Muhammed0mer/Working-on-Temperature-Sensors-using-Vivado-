@@ -19,6 +19,35 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module thermometer(CLK, SCL, SDA, SSEG_CA, SSEG_AN, PWM_R, PWM_G, PWM_B);
+input CLK;
+input SCL;
+inout SDA;
+output reg [7:0] SSEG_CA;
+output reg [7:0] SSEG_AN;
+output reg [7:0] PWM_R;
+output reg [7:0] PWM_G;
+output reg [7:0] PWM_B;
+
+reg [7:0] temp;
+reg temp_sign;
+wire [23:0] RGBval;
+wire [3:0] sw;
+
+initial begin
+SSEG_AN <= 8'b11111110;
+sw <= 4'b1010;  // 4'b1010 is blank
+end
+
+
+temp_7seg_encoder encd(.CLK(CLK), .SSEG_AN(SSEG_AN), .temp(temp), .temp_sign(temp_sign), .sw(sw));
+segment_display disp(.SW(sw), .CLK(CLK), .SSEG_CA(SSEG_CA), .SSEG_AN(SSEG_AN));
+
+temp_RGB_encoder RGBencd(.CLK(CLK), .temp(temp), .temp_sign(temp_sign), .RGBval(RGBval));
+RGB_PWM RGB(.CLK(CLK), .RGBval(RGBval), .PWM_R(PWM_R), .PWM_G(PWM_G), .PWM_B(PWM_B));
+
+endmodule
+
 
 module temp_7seg_encoder(CLK,SSEG_AN, temp,temp_sign, sw);
 input CLK;
@@ -27,12 +56,9 @@ input temp_sign;
 input [7:0] SSEG_AN;
 output reg [3:0] sw;
 
-
-
 reg [11:0] temp_BCD;
 
 Binary_to_BCD #(.INPUT_WIDTH(8), .DECIMAL_DIGITS(3)) temp_BCD_encoder(.i_Clock(CLK), .i_Binary(temp), .i_Start(1'b1), .o_BCD(temp_BCD), .o_DV());
-
 
 always @(SSEG_AN) begin
 case(SSEG_AN)
@@ -46,15 +72,16 @@ end
 
 endmodule
 
-module temp_RGB_encoder(CLK, temp, RGBval);
+module temp_RGB_encoder(CLK, temp,temp_sign, RGBval);
 input CLK;
 input [7:0] temp;
+input temp_sign;
 output reg [23:0] RGBval;
 
 
 
 always @(posedge CLK) begin
-if(temp < 8'd32) begin
+if(temp < 8'd32 || temp_sign) begin
 RGBval <= {8'd66,8'd245,8'd66+(temp<<2)};
 end
 else if(temp > 8'd32 && temp < 8'd38) begin
@@ -68,23 +95,18 @@ end
 endmodule
 
 
-module segment_display(SW, CLK, SSEG_CA,SSEG_AN, LED);
+module segment_display(SW, CLK, SSEG_CA,SSEG_AN);
 input [3:0] SW;
 input CLK;
-
 
 output reg[7:0] SSEG_CA;
 output reg[7:0] SSEG_AN;
 
-output reg[3:0] LED;
-wire Clk_Slow;
-
-slow_clock S1 (CLK , Clk_Slow);
-
 initial begin
 SSEG_AN <= 8'b11111110;
 end
-always @(posedge Clk_Slow)
+
+always @(posedge CLK)
 begin
 case(SW)
 4'b0000: SSEG_CA <= 8'b11000000;
@@ -119,26 +141,21 @@ endcase
 
  end
 endmodule
- module slow_clock(CLK,Clk_Slow);
- input CLK;
- output Clk_Slow;
- reg[31:0] counter_out;
- reg Clk_Slow;
- initial 
- begin
- counter_out<=32'h00000000;
- Clk_Slow<=0;
- end
- always @(posedge CLK) begin
- counter_out<=counter_out + 32'h00000001;
- if (counter_out> 32'h00F5E100)
- begin
- counter_out<=32'h00000000;
- Clk_Slow<=!Clk_Slow;
- end
- end
- endmodule
  
+ module rgb_to_pwm(RGBval, CLK, PWM_R, PWM_G, PWM_B);
+    input [23:0] RGBval;
+    input CLK;
+    output PWM_R;
+    output PWM_G;
+    output PWM_B;
+
+
+    PWM_generator PWM_Rgen (CLK,RGBval[23:16], PWM_R);
+    PWM_generator PWM_Ggen (CLK,RGBval[15:8], PWM_G);
+    PWM_generator PWM_Bgen (CLK, RGBval[7:0], PWM_B);
+
+endmodule
+
 module PWM_generator(CLK,DUTY_CYCLE, PWM_OUT);
 input CLK;
 input reg[7:0] DUTY_CYCLE;
@@ -153,23 +170,6 @@ always @(posedge CLK) begin
     PWM_counter<=0;
 end
 assign PWM_OUT = PWM_counter < DUTY_CYCLE? 1:0;
-endmodule
-
-
-
-
- module rgb_to_pwm(RGBval, CLK, PWM_R, PWM_G, PWM_B);
-    input [23:0] RGBval;
-    input CLK;
-    output PWM_R;
-    output PWM_G;
-    output PWM_B;
-
-
-    PWM_generator PWM_Rgen (CLK,RGBval[23:16], PWM_R);
-    PWM_generator PWM_Ggen (CLK,RGBval[15:8], PWM_G);
-    PWM_generator PWM_Bgen (CLK, RGBval[7:0], PWM_B);
-
 endmodule
 
 module Binary_to_BCD
