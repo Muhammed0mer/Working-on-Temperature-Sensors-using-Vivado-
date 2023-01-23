@@ -304,35 +304,141 @@ endmodule // Binary_to_BCD
     
 
  
-//  module get_temp(SDA, SCL, CLK, temp);
-//     inout SDA;
-//     input SCL;
-//     input CLK;
-//     output reg[7:0] temp;
-//     reg [7:0] count;
-//     reg [2:0] mode;
-//     const init_and_address = 9'b010010000;
-// reg [8:0] shift_reg;
-//  assign shift_out = shift_reg[8];
-//  assign shift_in = shift_out
-//     always @(posedge shift_clk) begin
-//         shift_reg <= shift_reg << 1;
-//         shift_reg[0] <= shift_in;
-//     end
+ module get_temp(SDA, SCL, CLK, rawtemp);
+    inout SDA;
+    input SCL;
+    input CLK;
+    output reg[7:0] rawtemp;
+    reg [7:0] count=0;
+    reg [2:0] mode;
+    const init_and_address = 10'b1010010000;
 
-//     initial begin
-//         assign SDA = 1;
-//     end
+    reg [9:0] shift_reg = init_and_address;
+    assign shift_out = shift_reg[8];
+    assign shift_in = shift_out
+    always @(posedge SCL) begin
+        if(mode==3'b000)begin
+        SDA <= shift_out;
+        shift_reg <= shift_reg << 1;
+        shift_reg[0] <= shift_in;
+        count <= count + 1;
+        if(count==10) begin
+        mode <= 3'b001;
+        count <= 0;
+        end
+        end
+        else if(mode==3'b001)begin
+            if (SDA==0) mode <= 3'b010;
+            else mode <= 3'b000;
+        else if (mode==3'b010)begin
+            if (count<=8)begin
+            SDA <= 1;
+            count <= count + 1;
+            end
+            else if(count==9 && SDA==0) mode <= 3'b011;
+            else mode <= 3'b000;
+            end
+        else if (mode==3'b011)begin
+            if (count<=10)begin
+            SDA <= shift_out;
+        shift_reg <= shift_reg << 1;
+        shift_reg[0] <= shift_in;
+        count <= count + 1;
+        end
+        else if (count ==11 && SDA==0) begin
+        count <= count+1;
+        end
+        else if (count>11 && count<=27) begin
+            if (count==20) SDA<=1;
+            else rawtemp <= {rawtemp<<1,SDA};
+            count <= count + 1;
+        end
+        else 
+            mode <= 3'b000;
+        end
 
-//     always @(posedge CLK) begin
-//         if(count==8'b11111111)begin
-//         count <= 0;
-//         end
-//         else begin
-//         count <= count + 1;
-//         end
-//     end
 
+            
+
+
+
+
+
+    initial begin
+        assign SDA = 1;
+    end
+
+    always @(posedge CLK) begin
+        if(count==8'b11111111)begin
+        count <= 0;
+        end
+        else begin
+        count <= count + 1;
+        end
+    end
+        endmodule
+
+module i2c_temp(
+input SCL,       // I2C clock input
+inout SDA,       // I2C data input
+output reg [15:0] rawtemp   // 8-bit temperature register to store the temperature value
+);
+// I2C address for the temperature sensor
+parameter ADDRESS = 8'h90;
+reg [7:0] address;    // 8-bit address register to store the sensor's address
+reg [15:0] data;       // 16-bit data register to store the data from the sensor
+reg [4:0] bit_count;  // 4-bit bit counter to keep track of the current bit
+reg [1:0] state;      // 2-bit state machine to keep track of the current state
+reg ack;              // Acknowledge signal
+reg[4:0] count=0;
+
+// State machine states
+localparam S_START = 2'b000, S_PAUSE=2'b001 S_ADDRESS = 2'b010, S_DATA = 2'b011, S_STOP = 2'b100;
+
+always @(posedge SCL) begin
+case (state)
+S_START: begin
+    // Send start condition
+    SDA <= 1'b0;
+    // Move to address state
+    state <= S_ADDRESS;
+end
+S_PAUSE: begin
+    //delay
+    if (count<5'b11111) count<=count+1;
+    else begin
+    // Move to address state
+    state <= S_DATA;
+end
+end
+S_ADDRESS: begin
+    // Send address
+    if (bit_count == 8) begin
+        // Send the address of the sensor
+        SDA <= address[bit_count];
+        // Move to data state
+        state <= S_PAUSE;
+    end 
+    else begin
+        SDA <= address[bit_count];
+        // Increment bit count
+        bit_count <= bit_count + 1;
+    end
+end
+S_DATA: begin
+    // Send data
+    if (bit_count == ) begin
+        // Send the data to the sensor
+        SDA <= data[bit_count];
+        // Move to stop state
+        state <= S_STOP;
+    end 
+    else begin
+        SDA <= data[bit_count];
+        // Increment bit count
+        bit_count <= bit_count + 1;
+    end
+end
 
 
     
