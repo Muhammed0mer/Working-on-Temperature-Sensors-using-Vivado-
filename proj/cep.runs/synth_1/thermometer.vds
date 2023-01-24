@@ -1,0 +1,714 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Jan 23 16:00:21 2023
+# Process ID: 1004
+# Current directory: D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.runs/synth_1
+# Command line: vivado.exe -log thermometer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source thermometer.tcl
+# Log file: D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.runs/synth_1/thermometer.vds
+# Journal file: D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source thermometer.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 299.367 ; gain = 69.102
+Command: synth_design -top thermometer -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4484 
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:221]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:222]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:223]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:224]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:225]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Binary_to_BCD with formal parameter declaration list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:226]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 420.930 ; gain = 108.691
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'thermometer' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:22]
+INFO: [Synth 8-6157] synthesizing module 'i2c_master' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:571]
+	Parameter sensor_address_plus_read bound to: 8'b10010111 
+	Parameter POWER_UP bound to: 5'b00000 
+	Parameter START bound to: 5'b00001 
+	Parameter SEND_ADDR6 bound to: 5'b00010 
+	Parameter SEND_ADDR5 bound to: 5'b00011 
+	Parameter SEND_ADDR4 bound to: 5'b00100 
+	Parameter SEND_ADDR3 bound to: 5'b00101 
+	Parameter SEND_ADDR2 bound to: 5'b00110 
+	Parameter SEND_ADDR1 bound to: 5'b00111 
+	Parameter SEND_ADDR0 bound to: 5'b01000 
+	Parameter SEND_RW bound to: 5'b01001 
+	Parameter REC_ACK bound to: 5'b01010 
+	Parameter REC_MSB7 bound to: 5'b01011 
+	Parameter REC_MSB6 bound to: 5'b01100 
+	Parameter REC_MSB5 bound to: 5'b01101 
+	Parameter REC_MSB4 bound to: 5'b01110 
+	Parameter REC_MSB3 bound to: 5'b01111 
+	Parameter REC_MSB2 bound to: 5'b10000 
+	Parameter REC_MSB1 bound to: 5'b10001 
+	Parameter REC_MSB0 bound to: 5'b10010 
+	Parameter SEND_ACK bound to: 5'b10011 
+	Parameter REC_LSB7 bound to: 5'b10100 
+	Parameter REC_LSB6 bound to: 5'b10101 
+	Parameter REC_LSB5 bound to: 5'b10110 
+	Parameter REC_LSB4 bound to: 5'b10111 
+	Parameter REC_LSB3 bound to: 5'b11000 
+	Parameter REC_LSB2 bound to: 5'b11001 
+	Parameter REC_LSB1 bound to: 5'b11010 
+	Parameter REC_LSB0 bound to: 5'b11011 
+	Parameter NACK bound to: 5'b11100 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:650]
+WARNING: [Synth 8-5788] Register counter_reg in module i2c_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:587]
+WARNING: [Synth 8-5788] Register clk_reg_reg in module i2c_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:588]
+WARNING: [Synth 8-5788] Register o_bit_reg in module i2c_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:657]
+WARNING: [Synth 8-5788] Register tMSB_reg in module i2c_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:706]
+WARNING: [Synth 8-5788] Register tLSB_reg in module i2c_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:759]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_master' (1#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:571]
+INFO: [Synth 8-6157] synthesizing module 'clkgen_200kHz' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:549]
+INFO: [Synth 8-6155] done synthesizing module 'clkgen_200kHz' (2#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:549]
+INFO: [Synth 8-6157] synthesizing module 'temp_7seg_encoder' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:85]
+INFO: [Synth 8-6157] synthesizing module 'Binary_to_BCD' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:209]
+	Parameter INPUT_WIDTH bound to: 8 - type: integer 
+	Parameter DECIMAL_DIGITS bound to: 3 - type: integer 
+	Parameter s_IDLE bound to: 3'b000 
+	Parameter s_SHIFT bound to: 3'b001 
+	Parameter s_CHECK_SHIFT_INDEX bound to: 3'b010 
+	Parameter s_ADD bound to: 3'b011 
+	Parameter s_CHECK_DIGIT_INDEX bound to: 3'b100 
+	Parameter s_BCD_DONE bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'Binary_to_BCD' (3#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:209]
+WARNING: [Synth 8-567] referenced signal 'temp_BCD' should be on the sensitivity list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:97]
+WARNING: [Synth 8-567] referenced signal 'temp_sign' should be on the sensitivity list [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:97]
+WARNING: [Synth 8-3848] Net temp_BCD in module/entity temp_7seg_encoder does not have driver. [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'temp_7seg_encoder' (4#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:85]
+INFO: [Synth 8-6157] synthesizing module 'segment_display' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:132]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:165]
+INFO: [Synth 8-6155] done synthesizing module 'segment_display' (5#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:132]
+INFO: [Synth 8-6157] synthesizing module 'temp_RGB_encoder' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'temp_RGB_encoder' (6#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:109]
+INFO: [Synth 8-6157] synthesizing module 'rgb_to_pwm' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:179]
+INFO: [Synth 8-6157] synthesizing module 'PWM_generator' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:193]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_generator' (7#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:193]
+INFO: [Synth 8-6155] done synthesizing module 'rgb_to_pwm' (8#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:179]
+INFO: [Synth 8-6155] done synthesizing module 'thermometer' (9#1) [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:22]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 456.141 ; gain = 143.902
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 456.141 ; gain = 143.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 456.141 ; gain = 143.902
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Muhammad Ahmed/Desktop/cep_xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/thermometer_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/thermometer_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 818.625 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'i2c_master'
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clk_reg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clk_reg" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "o_bit" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tLSB" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tMSB" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "temp_data_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clk_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_SM_Main" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "r_SM_Main" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'Binary_to_BCD'
+INFO: [Synth 8-802] inferred FSM for state register 'SSEG_AN_reg' in module 'segment_display'
+INFO: [Synth 8-5546] ROM "SSEG_AN" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                POWER_UP |                            00000 |                            00000
+                   START |                            00001 |                            00001
+              SEND_ADDR6 |                            01101 |                            00010
+              SEND_ADDR5 |                            01010 |                            00011
+              SEND_ADDR4 |                            01011 |                            00100
+              SEND_ADDR3 |                            11100 |                            00101
+              SEND_ADDR2 |                            11010 |                            00110
+              SEND_ADDR1 |                            10111 |                            00111
+              SEND_ADDR0 |                            11000 |                            01000
+                 SEND_RW |                            11011 |                            01001
+                 REC_ACK |                            10110 |                            01010
+                REC_MSB7 |                            10100 |                            01011
+                REC_MSB6 |                            00110 |                            01100
+                REC_MSB5 |                            00101 |                            01101
+                REC_MSB4 |                            00010 |                            01110
+                REC_MSB3 |                            00011 |                            01111
+                REC_MSB2 |                            01111 |                            10000
+                REC_MSB1 |                            01100 |                            10001
+                REC_MSB0 |                            01001 |                            10010
+                SEND_ACK |                            00111 |                            10011
+                REC_LSB7 |                            01000 |                            10100
+                REC_LSB6 |                            11001 |                            10101
+                REC_LSB5 |                            10011 |                            10110
+                REC_LSB4 |                            10001 |                            10111
+                REC_LSB3 |                            10010 |                            11000
+                REC_LSB2 |                            10101 |                            11001
+                REC_LSB1 |                            10000 |                            11010
+                REC_LSB0 |                            01110 |                            11011
+                    NACK |                            00100 |                            11100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'i2c_master'
+WARNING: [Synth 8-327] inferring latch for variable 'sw_reg' [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:99]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                         11111110
+                 iSTATE0 |                              001 |                         11111101
+                 iSTATE1 |                              010 |                         11111011
+                 iSTATE2 |                              011 |                         11110111
+                 iSTATE3 |                              100 |                         11101111
+                 iSTATE4 |                              101 |                         11011111
+                 iSTATE5 |                              110 |                         10111111
+                 iSTATE6 |                              111 |                         01111111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'SSEG_AN_reg' using encoding 'sequential' in module 'segment_display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:53 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 10    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   3 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	  29 Input     12 Bit        Muxes := 1     
+	   7 Input     12 Bit        Muxes := 2     
+	  29 Input      8 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 4     
+	   7 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	  29 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 39    
+	  29 Input      1 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module thermometer 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module i2c_master 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	  29 Input     12 Bit        Muxes := 1     
+	  29 Input      8 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 2     
+	  29 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 36    
+	  29 Input      1 Bit        Muxes := 3     
+Module clkgen_200kHz 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Binary_to_BCD 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   7 Input     12 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 1     
+Module temp_7seg_encoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module segment_display 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+Module temp_RGB_encoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 1     
+Module PWM_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element encd/temp_BCD_encoder/r_DV_reg was removed.  [D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.srcs/sources_1/new/segment_display.v:254]
+INFO: [Synth 8-5546] ROM "master/o_bit" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "master/state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cgen/clk_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "encd/temp_BCD_encoder/r_SM_Main" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'encd/sw_reg[0]' (LD) to 'encd/sw_reg[2]'
+INFO: [Synth 8-3886] merging instance 'encd/sw_reg[1]' (LD) to 'encd/sw_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\RGBencd/RGBval_reg[0] )
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[16]' (FDR) to 'RGBencd/RGBval_reg[18]'
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[17]' (FDS) to 'RGBencd/RGBval_reg[22]'
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[18]' (FDR) to 'RGBencd/RGBval_reg[19]'
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[19]' (FDR) to 'RGBencd/RGBval_reg[20]'
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[20]' (FDR) to 'RGBencd/RGBval_reg[21]'
+INFO: [Synth 8-3886] merging instance 'RGBencd/RGBval_reg[21]' (FDR) to 'RGBencd/RGBval_reg[23]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\RGBencd/RGBval_reg[22] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\disp/SSEG_CA_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_SM_Main_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_SM_Main_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_SM_Main_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[2]__0) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[1]__0) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Digit_Index_reg[0]__0) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[7]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[6]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[5]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[4]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[3]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Loop_Count_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[6]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[5]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[4]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[3]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/tLSB_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[6]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[5]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[4]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[3]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (master/temp_data_reg_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[7]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[6]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[5]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[4]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[3]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_Binary_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[11]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[10]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[9]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[8]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[7]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[6]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[5]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[4]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[3]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[2]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[1]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (encd/temp_BCD_encoder/r_BCD_reg[0]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (disp/SSEG_CA_reg[7]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (RGBencd/RGBval_reg[22]) is unused and will be removed from module thermometer.
+WARNING: [Synth 8-3332] Sequential element (RGBencd/RGBval_reg[0]) is unused and will be removed from module thermometer.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:24 . Memory (MB): peak = 818.625 ; gain = 506.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:24 . Memory (MB): peak = 828.746 ; gain = 516.508
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'disp/SSEG_CA_reg[0]' (FD) to 'disp/SSEG_CA_reg[2]'
+INFO: [Synth 8-3886] merging instance 'disp/SSEG_CA_reg[1]' (FD) to 'disp/SSEG_CA_reg[4]'
+INFO: [Synth 8-3886] merging instance 'disp/SSEG_CA_reg[2]' (FD) to 'disp/SSEG_CA_reg[3]'
+INFO: [Synth 8-3886] merging instance 'disp/SSEG_CA_reg[3]' (FD) to 'disp/SSEG_CA_reg[5]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:01:25 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     6|
+|3     |LUT1   |     9|
+|4     |LUT2   |    32|
+|5     |LUT3   |    32|
+|6     |LUT4   |    44|
+|7     |LUT5   |    42|
+|8     |LUT6   |    49|
+|9     |FDCE   |    15|
+|10    |FDPE   |     7|
+|11    |FDRE   |    77|
+|12    |FDSE   |     6|
+|13    |LD     |     2|
+|14    |IBUF   |     2|
+|15    |IOBUF  |     1|
+|16    |OBUF   |    20|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------+------------------+------+
+|      |Instance     |Module            |Cells |
++------+-------------+------------------+------+
+|1     |top          |                  |   346|
+|2     |  RGB        |rgb_to_pwm        |    73|
+|3     |    PWM_Bgen |PWM_generator     |    23|
+|4     |    PWM_Ggen |PWM_generator_0   |    23|
+|5     |    PWM_Rgen |PWM_generator_1   |    27|
+|6     |  RGBencd    |temp_RGB_encoder  |    42|
+|7     |  cgen       |clkgen_200kHz     |    21|
+|8     |  disp       |segment_display   |    22|
+|9     |  encd       |temp_7seg_encoder |     2|
+|10    |  master     |i2c_master        |   152|
++------+-------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 56 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:57 . Memory (MB): peak = 831.414 ; gain = 156.691
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:01:27 . Memory (MB): peak = 831.414 ; gain = 519.176
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+  LD => LDCE: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+124 Infos, 86 Warnings, 16 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:34 . Memory (MB): peak = 832.293 ; gain = 532.926
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/7th Semester/DSD/DSD_CEP/Working-on-Temperature-Sensors-using-Vivado--main/proj/cep.runs/synth_1/thermometer.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file thermometer_utilization_synth.rpt -pb thermometer_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.399 . Memory (MB): peak = 832.293 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 23 16:02:50 2023...

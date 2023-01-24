@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file D:\7th Semester\DSD\DSD_CEP\Working-on-Temperature-Sensors-using-Vivado--main\proj\cep.runs\impl_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permission denied
