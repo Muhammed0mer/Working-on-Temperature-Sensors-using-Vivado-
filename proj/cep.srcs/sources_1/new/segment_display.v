@@ -19,9 +19,10 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module thermometer(CLK,reset, TMP_SCL, TMP_SDA, SSEG_CA, SSEG_AN, PWM_R, PWM_G, PWM_B);
+module thermometer(CLK,reset, TMP_SCL, TMP_SDA,SW, SSEG_CA, SSEG_AN, PWM_R, PWM_G, PWM_B);
 input         CLK;        // nexys clk signal
     input         reset;         // btnC on nexys
+    input [9:0] SW;              //switches to simulate temp sensor
     inout         TMP_SDA;          // i2c sda on temp sensor - bidirectional
     output        TMP_SCL ;         // i2c scl on temp sensor
 //input CLK;
@@ -34,21 +35,21 @@ output PWM_G;
 output PWM_B;
 
 wire [15:0] raw_temp_wire;
-reg [15:0] raw_temp;
+reg [15:0] raw_temp=16'd0;
 reg [7:0] temp;
 reg temp_sign;
 wire [23:0] RGBval;
-wire [3:0] sw;
+wire [3:0] dig;
 
  wire sda_dir;                   // direction of SDA signal - to or from master
     wire w_200kHz;                  // 200kHz SCL
-    wire [15:0] w_data;              // 8 bits of temperature data
+   // wire [15:0] w_data;           // 8 bits of temperature data
 
     // Instantiate i2c master
     i2c_master master(
         .clk_200kHz(w_200kHz),
         .reset(reset),
-        .temp_data(w_data),
+        .temp_data(raw_temp_wire),
         .SDA(TMP_SDA),
         .SDA_dir(sda_dir),
         .SCL(TMP_SCL)
@@ -63,16 +64,16 @@ wire [3:0] sw;
 //SSEG_AN <= 8'b11111110;
 ////sw <= 4'b1010;  // 4'b1010 is blank
 //end
-
+assign raw_temp = SW[9] ? raw_temp_wire : SW[8:0];
 //i2c_temp adt_interface(SDA,CLK,raw_temp_wire);
 always @ (posedge CLK) begin
-temp_sign <= w_data[15];
-temp <= w_data[14:7];
-if (temp_sign) temp <= w_data[14:7] - 256;
+temp_sign <= raw_temp[15];
+temp <= raw_temp[14:7];
+if (temp_sign) temp <= raw_temp[14:7] - 256;
 end
 
-temp_7seg_encoder encd(.CLK(CLK), .SSEG_AN(SSEG_AN), .temp(temp), .temp_sign(temp_sign), .sw(sw));
-segment_display disp(.SW(sw), .CLK(CLK), .SSEG_CA(SSEG_CA), .SSEG_AN(SSEG_AN));
+temp_7seg_encoder encd(.CLK(CLK), .SSEG_AN(SSEG_AN), .temp(temp), .temp_sign(temp_sign), .sw(dig));
+segment_display disp(.SW(dig), .CLK(CLK), .SSEG_CA(SSEG_CA), .SSEG_AN(SSEG_AN));
 
 temp_RGB_encoder RGBencd(.CLK(CLK), .temp(temp), .temp_sign(temp_sign), .RGBval(RGBval));
 rgb_to_pwm RGB(.CLK(CLK), .RGBval(RGBval), .PWM_R(PWM_R), .PWM_G(PWM_G), .PWM_B(PWM_B));
